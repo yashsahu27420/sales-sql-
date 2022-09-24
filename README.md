@@ -46,21 +46,13 @@ SELECT * FROM portfolio.dataset2;
 
 	
 
-	-- avg literacy rate
+	-- avg literacy rate > 90
 
-	 
-
-	select state,round(avg(literacy),0) avg_literacy_ratio from dataset007 
-
-	group by state having round(avg(literacy),0)>90 order by avg_literacy_ratio desc ;
-
+	SELECT   state ,round( avg(Literacy) ,2 )as literacy_rate 
+FROM portfolio.dataset007 group by state having round(avg(Literacy),0) >90  order by Literacy desc ;
 	
 
 	-- top 3 state showing highest growth ratio
-
-	
-
-	
 
 	select state,avg(growth)*100 avg_growth from dataset007 group by state order by avg_growth desc limit 3;
 
